@@ -47,6 +47,6 @@ de8dc9e803100f59163e7718ea4ff94037d435bb
 249802dd9cfe7fc8cf9cf9a2eb134f91555ce011
 ```
 
-This is because git rev-list will walk commits by commit date (older first).
+This is because git rev-list will walk commits by commit date (most recent first).
 When the rev-list command encounters 5 (defined [here](https://github.com/git/git/blob/3bd955d26919e149552f34aacf8a4e6368c26cec/revision.c#L1298)) consecutive uninteresting commits, it will stop walking that branch.
 In this particular case, git rev-list will walk through `9655a73` and its ancestors first, and it will never be marked as uninteresting because there are more than 5 **older** commits before it can be reached.
